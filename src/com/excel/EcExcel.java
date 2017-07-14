@@ -35,10 +35,9 @@ public class EcExcel
 		// 报销单中间部分
 		List<EcPro>			pros = ecBxd.getPros();									// 报销项目
 		String 				bz = ecBxd.getBz();										// 备注
-		String 				ldsp = ecBxd.getLdsp();									// 领导审批
 
 		// 导出到excel
-		createExcel(inFileStr, ouFileStr, dep, year, month, day, tcktno, pros, bz, ldsp);
+		createExcel(inFileStr, ouFileStr, dep, year, month, day, tcktno, pros, bz);
 	}
 
 	@SuppressWarnings("rawtypes")
@@ -61,8 +60,8 @@ public class EcExcel
 			return df.format(money).replace(".", "").substring(index, index + 1);
 	}
 
-	private void createExcel(String inFileStr, String ouFileStr, String dep, String year, String month, String day, int tcktno, List<EcPro> pros, String bz,
-			String ldsp) throws Exception
+	private void createExcel(String inFileStr, String ouFileStr, String dep, String year, String month, String day,
+			int tcktno, List<EcPro> pros, String bz) throws Exception
 	{
 		// String				templteFilename = CxSvrVariable.dataMan.getDirRoot() + "reports/ecbxd.xlsx";
 		String				templteFilename = inFileStr;
@@ -109,8 +108,6 @@ public class EcExcel
 				
 				row = sheet.getRow(3);
 				row.getCell(32).setCellValue(bz);							// 备注
-				row = sheet.getRow(7);
-				row.getCell(32).setCellValue(ldsp);							// 领导审批
 	
 				//费用部分
 				for(j = 0; j < ITEMS_PER_PAGE; j++)

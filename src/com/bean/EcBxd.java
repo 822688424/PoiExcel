@@ -9,7 +9,6 @@ public class EcBxd
 	private	int			 	hrId;			// 员工id
 	private String 			dep;			// 部门
 	private String 			bxdate;			// 日期
-	private String 			ldsp;			// 领导审批
 	private int 			tcktno;			// 单据及附件页数
 	private List<EcPro> 	pros;			// 报销项目
 
@@ -18,7 +17,7 @@ public class EcBxd
 		super();
 	}
 
-	public EcBxd(int id, String bz, int hrId, String dep, String bxdate, String ldsp, int tcktno, List<EcPro> pros)
+	public EcBxd(int id, String bz, int hrId, String dep, String bxdate, int tcktno, List<EcPro> pros)
 	{
 		super();
 		this.id = id;
@@ -26,7 +25,6 @@ public class EcBxd
 		this.hrId = hrId;
 		this.dep = dep;
 		this.bxdate = bxdate;
-		this.ldsp = ldsp;
 		this.tcktno = tcktno;
 		this.pros = pros;
 	}
@@ -81,16 +79,6 @@ public class EcBxd
 		this.bxdate = bxdate;
 	}
 
-	public String getLdsp()
-	{
-		return ldsp;
-	}
-
-	public void setLdsp(String ldsp)
-	{
-		this.ldsp = ldsp;
-	}
-
 	public int getTcktno()
 	{
 		return tcktno;
@@ -114,8 +102,8 @@ public class EcBxd
 	@Override
 	public String toString()
 	{
-		return "EcBxd [id=" + id + ", bz=" + bz + ", hrId=" + hrId + ", dep=" + dep + ", bxdate=" + bxdate + ", ldsp="
-				+ ldsp + ", tcktno=" + tcktno + ", pros=" + pros + "]";
+		return "EcBxd [id=" + id + ", bz=" + bz + ", hrId=" + hrId + ", dep=" + dep + ", bxdate=" + bxdate + ", tcktno="
+				+ tcktno + ", pros=" + pros + "]";
 	}
 
 }
